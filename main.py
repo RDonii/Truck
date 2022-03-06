@@ -205,7 +205,7 @@ def profile():
     session_id = "1"
     type = 'Driver'
     if type == 'Driver':
-        return jsonify([*map(Driver_serializer, Driver.query.filter_by(id=session_id).first())])
+        return jsonify(Driver_serializer(Driver.query.filter_by(id=session_id).first()))
 
 
 
